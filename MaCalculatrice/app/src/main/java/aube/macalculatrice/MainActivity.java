@@ -1,5 +1,6 @@
 package aube.macalculatrice;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         bVirgule=(Button) findViewById(R.id.bVirgule);
         bClear=(Button) findViewById(R.id.bClear);
         bPercent=(Button) findViewById(R.id.bPercent);
+
 
         for (int i = 0; i < 10; i++){
             final int valb=i;
@@ -161,6 +163,8 @@ public class MainActivity extends AppCompatActivity {
                 mViewText.setText(valS);
             }
         });
+
+
     }
 
     public double egal(double v1, double v2){
@@ -183,4 +187,10 @@ public class MainActivity extends AppCompatActivity {
 
         return resultat;
     }
+
+    public void affichScientifiq(View view){
+        Intent intent = new Intent(this, AffichScientifiq.class);
+        startActivity(intent);
+    }
+
 }

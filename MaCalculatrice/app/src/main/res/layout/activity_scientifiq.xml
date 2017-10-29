@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@android:style/TextAppearance.DeviceDefault.Medium"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="aube.macalculatrice.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
     android:orientation="vertical"
-    android:weightSum="6" >>
+    android:id="@+id/scientifiq_layout"
+    tools:context="aube.macalculatrice.AffichScientifiq"
+    android:weightSum="7" >
 
 
     <TextView
@@ -244,10 +244,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textSize="@dimen/text_small"
-            android:onClick="affichScientifiq"
             android:background="#0F42A1"
             android:textColor="#FFFFFF"
-            android:text="Mode Scientifique" />
+            android:onClick="cacheScientifiq"
+            android:text="Mode Casual" />
 
         <Button
             android:id="@+id/egalButton"
@@ -262,9 +262,55 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4">
 
+        <Button
+            android:id="@+id/bCos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:background="#0F42A1"
+            android:textColor="#FFFFFF"
+            android:text="cos" />
 
+        <Button
+            android:id="@+id/bSin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:background="#0F42A1"
+            android:textColor="#FFFFFF"
+            android:text="sin" />
 
+        <Button
+            android:id="@+id/bPO"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:background="#0F42A1"
+            android:textColor="#FFFFFF"
+            android:text="(" />
+
+        <Button
+            android:id="@+id/bPF"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:background="#0F42A1"
+            android:textColor="#FFFFFF"
+            android:text=")" />
+
+    </LinearLayout>
 
 
 </LinearLayout>
