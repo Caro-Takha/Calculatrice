@@ -22,13 +22,12 @@ public class MainActivity extends AppCompatActivity {
     private Button bMoins;
     private Button bVirgule;
     private Button bClear;
+    private Button bPercent;
     private double val;
     private String valS="";
     private double valprecedent;
-    private String operateurPrecedent;
     private ArrayList<Button> ListeBoutons;
     private String operateur="";
-    private int decim=0;
 
 
     @Override
@@ -54,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         bDiv= (Button) findViewById(R.id.bDiv);
         bVirgule=(Button) findViewById(R.id.bVirgule);
         bClear=(Button) findViewById(R.id.bClear);
+        bPercent=(Button) findViewById(R.id.bPercent);
 
         for (int i = 0; i < 10; i++){
             final int valb=i;
@@ -141,6 +141,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 valS="";
                 val=0;
+                mViewText.setText(valS);
+            }
+        });
+
+        bPercent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                valS=valS+"%";
+                if (operateur.equals("+")){
+                    val=valprecedent*(val/100);
+                }
+                if (operateur.equals("-")){
+                    val=valprecedent*(val/100);
+                }
+                if (operateur.equals("x")) {
+                    val = val / 100;
+                }
                 mViewText.setText(valS);
             }
         });
