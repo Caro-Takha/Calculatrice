@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@android:style/TextAppearance.DeviceDefault.Medium"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="aube.macalculatrice.MainActivity"
@@ -17,15 +19,15 @@
         android:textColor="#CE0D0D"
         android:layout_height="0dp"
         android:text="Affichage"
-        android:layout_weight="0.90"
+        android:layout_weight="0.95"
         android:gravity="center"
-        android:textSize="60sp" />
+        android:textSize="@dimen/text_size" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#CE0D0D"
-        android:layout_weight="0.10" />
+        android:layout_weight="0.05" />
 
     <LinearLayout
         xmlns:tools="http://schemas.android.com/tools"
@@ -41,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="Clear" />
 
@@ -50,7 +52,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:text="+"
             android:textColor="#FFFFFF"
             android:background="#CE0D0D"/>
@@ -72,7 +74,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="1" />
 
@@ -81,7 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="2" />
 
@@ -90,7 +92,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="3" />
 
@@ -99,7 +101,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:textColor="#FFFFFF"
             android:background="#CE0D0D"
             android:text="-" />
@@ -119,7 +121,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="4" />
 
@@ -128,7 +130,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="5" />
 
@@ -137,7 +139,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="6" />
 
@@ -146,7 +148,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:textColor="#FFFFFF"
             android:background="#CE0D0D"
             android:text="x" />
@@ -166,7 +168,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="7" />
 
@@ -175,7 +177,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="8" />
 
@@ -184,7 +186,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="9" />
 
@@ -193,7 +195,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:textColor="#FFFFFF"
             android:background="#CE0D0D"
             android:text="/" />
@@ -213,7 +215,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="0" />
 
@@ -222,7 +224,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:background="#FFFFFF"
             android:text="," />
 
@@ -231,16 +233,16 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_small"
             android:background="#FFFFFF"
-            android:text="SC" />
+            android:text="Mode Scientifique" />
 
         <Button
             android:id="@+id/egalButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textSize="50sp"
+            android:textSize="@dimen/text_size"
             android:textColor="#FFFFFF"
             android:background="#CE0D0D"
             android:text="=" />

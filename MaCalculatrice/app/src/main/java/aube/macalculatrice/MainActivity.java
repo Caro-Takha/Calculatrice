@@ -16,20 +16,12 @@ public class MainActivity extends AppCompatActivity {
 
     private Button mGenerateEgalButton;
     private TextView mViewText;
-    private Button b1;
-    private Button b2;
-    private Button b3;
-    private Button b4;
-    private Button b5;
-    private Button b6;
-    private Button b7;
-    private Button b8;
-    private Button b9;
     private Button bMult;
     private Button bDiv;
     private Button bPlus;
     private Button bMoins;
     private Button bVirgule;
+    private Button bClear;
     private double val;
     private String valS="";
     private double valprecedent;
@@ -61,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         bMult= (Button) findViewById(R.id.bMult);
         bDiv= (Button) findViewById(R.id.bDiv);
         bVirgule=(Button) findViewById(R.id.bVirgule);
+        bClear=(Button) findViewById(R.id.bClear);
 
         for (int i = 0; i < 10; i++){
             final int valb=i;
@@ -139,6 +132,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 valS=valS+String.valueOf(".");
                 val=Double.parseDouble(valS);
+                mViewText.setText(valS);
+            }
+        });
+
+        bClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                valS="";
+                val=0;
                 mViewText.setText(valS);
             }
         });
