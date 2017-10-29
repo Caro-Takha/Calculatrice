@@ -1,148 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="aube.macalculatrice.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
-    tools:context="aube.macalculatrice.MainActivity"
-    android:weightSum="1">
+    android:weightSum="6" >>
 
 
     <TextView
         android:id="@+id/textResultat"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:layout_weight="0.10"
+        android:textColor="#CE0D0D"
+        android:layout_height="0dp"
+        android:text="Affichage"
+        android:layout_weight="0.90"
         android:gravity="center"
-        android:textSize="15sp" />
+        android:textSize="60sp" />
 
-    <GridLayout
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#CE0D0D"
+        android:layout_weight="0.10" />
+
+    <LinearLayout
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/grid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:useDefaultMargins="true"
-        android:alignmentMode="alignMargins"
-        android:columnCount="4"
-        android:rowCount="5"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textResultat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="horizontal"
-        android:columnOrderPreserved="true"
-        tools:context=".GridXMLActivity">
+        android:weightSum="4">
+
 
         <Button
-            android:id="@+id/bReset"
-            android:layout_columnSpan="3"
-            android:layout_gravity="fill"
-            android:layout_rowSpan="1"
-            android:text="Reset" />
+            android:id="@+id/bClear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
+            android:text="Clear" />
 
         <Button
-            android:id="@+id/bVirgule"
-            android:layout_columnSpan="1"
-            android:layout_gravity="fill"
-            android:layout_rowSpan="1"
-            android:text="," />
+            android:id="@+id/bPlus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:background="#CE0D0D"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4">
 
         <Button
             android:id="@+id/b1"
-            android:layout_columnSpan="1"
-            android:layout_gravity="fill"
-            android:layout_rowSpan="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="1" />
 
         <Button
             android:id="@+id/b2"
-            android:layout_columnSpan="1"
-            android:layout_gravity="fill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="2" />
 
         <Button
             android:id="@+id/b3"
-            android:layout_gravity="fill"
-            android:layout_rowSpan="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="3" />
 
         <Button
-            android:id="@+id/bPlus"
-            android:layout_gravity="fill"
-            android:text="+" />
+            android:id="@+id/bMoins"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:textColor="#FFFFFF"
+            android:background="#CE0D0D"
+            android:text="-" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4">
 
         <Button
             android:id="@+id/b4"
-            android:layout_columnSpan="1"
-            android:layout_gravity="fill"
-            android:layout_rowSpan="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="4" />
 
         <Button
             android:id="@+id/b5"
-            android:layout_columnSpan="1"
-            android:layout_gravity="fill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="5" />
 
         <Button
             android:id="@+id/b6"
-            android:layout_columnSpan="1"
-            android:layout_gravity="fill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="6" />
 
         <Button
-            android:id="@+id/bMoins"
-            android:layout_gravity="fill"
-            android:text="-" />
+            android:id="@+id/bMult"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:textColor="#FFFFFF"
+            android:background="#CE0D0D"
+            android:text="x" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4">
 
         <Button
             android:id="@+id/b7"
-            android:layout_gravity="fill"
-            android:layout_rowSpan="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="7" />
 
         <Button
             android:id="@+id/b8"
-            android:layout_columnSpan="1"
-            android:layout_gravity="fill"
-            android:layout_rowSpan="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="8" />
 
         <Button
             android:id="@+id/b9"
-            android:layout_columnSpan="1"
-            android:layout_gravity="fill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="9" />
 
         <Button
-            android:id="@+id/bMult"
-            android:layout_gravity="fill"
-            android:text="x" />
+            android:id="@+id/bDiv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:textColor="#FFFFFF"
+            android:background="#CE0D0D"
+            android:text="/" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="4">
 
         <Button
             android:id="@+id/b0"
-            android:layout_gravity="fill"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
             android:text="0" />
 
         <Button
-            android:id="@+id/egalButton"
-            android:layout_columnSpan="2"
-            android:layout_gravity="fill"
-            android:text="="
-            android:layout_below="@+id/grid" />
-
+            android:id="@+id/bVirgule"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
+            android:text="," />
 
         <Button
-            android:id="@+id/bDiv"
-            android:layout_gravity="fill"
-            android:text="/" />
+            android:id="@+id/bScience"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:background="#FFFFFF"
+            android:text="SC" />
+
+        <Button
+            android:id="@+id/egalButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="50sp"
+            android:textColor="#FFFFFF"
+            android:background="#CE0D0D"
+            android:text="=" />
+
+
+    </LinearLayout>
 
 
 
-    </GridLayout>
 
 
 
-
-</RelativeLayout>
+</LinearLayout>

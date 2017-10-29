@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private Button bMoins;
     private Button bVirgule;
     private double val;
+    private String valS="";
     private double valprecedent;
     private String operateurPrecedent;
     private ArrayList<Button> ListeBoutons;
@@ -66,14 +67,12 @@ public class MainActivity extends AppCompatActivity {
             ListeBoutons.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (decim==0) {
-                        val = val * 10 + valb;
-                    }
-                    else{
-                        val=val+valb/(decim*10);
-                        decim=decim+1;
-                    }
-                    mViewText.setText(String.valueOf(val));
+                    valS=valS+String.valueOf(valb);
+                    Log.v("valS APP TAG",valS);
+                    //val = val * 10 + valb;
+                    val=Double.parseDouble(valS);
+                    Log.v("val APP TAG",String.valueOf(val));
+                    mViewText.setText(valS);
                 }
             });
         }
@@ -85,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 valprecedent=egal(valprecedent,val);
                 operateur="+";
                 val=0;
+                valS="";
             }
         });
 
@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 valprecedent=egal(valprecedent,val);
                 operateur="-";
                 val=0;
+                valS="";
             }
         });
 
@@ -106,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 valprecedent=egal(valprecedent,val);
                 operateur="x";
                 val=0;
+                valS="";
             }
         });
 
@@ -117,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
                 valprecedent=egal(valprecedent,val);
                 operateur="/";
                 val=0;
+                valS="";
             }
         });
 
@@ -127,13 +130,16 @@ public class MainActivity extends AppCompatActivity {
                 mViewText.setText(String.valueOf(egal(valprecedent,val)));
                 operateur="";
                 val=0;
+                valS="";
             }
         });
 
         bVirgule.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                decim=1;
+                valS=valS+String.valueOf(".");
+                val=Double.parseDouble(valS);
+                mViewText.setText(valS);
             }
         });
     }
