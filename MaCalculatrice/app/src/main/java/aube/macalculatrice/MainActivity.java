@@ -24,11 +24,12 @@ public class MainActivity extends AppCompatActivity {
     private Button bVirgule;
     private Button bClear;
     private Button bPercent;
-    private double val;
-    private String valS="";
-    private double valprecedent;
+    public static double val;
+    public static String aff;
+    public static String valS;
+    public static double valprecedent;
     private ArrayList<Button> ListeBoutons;
-    private String operateur="";
+    public static String operateur;
 
 
     @Override
@@ -56,6 +57,19 @@ public class MainActivity extends AppCompatActivity {
         bClear=(Button) findViewById(R.id.bClear);
         bPercent=(Button) findViewById(R.id.bPercent);
 
+        if (valS==null){
+            valS="";
+        }
+        if (aff==null){
+            aff="";
+        }
+        if (operateur==null){
+            operateur="";
+        }
+
+        mViewText.setText(aff);
+        aff="";
+
 
         for (int i = 0; i < 10; i++){
             final int valb=i;
@@ -66,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.v("valS APP TAG",valS);
                     //val = val * 10 + valb;
                     val=Double.parseDouble(valS);
+                    aff=valS;
                     Log.v("val APP TAG",String.valueOf(val));
                     mViewText.setText(valS);
                 }
@@ -75,7 +90,8 @@ public class MainActivity extends AppCompatActivity {
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mViewText.setText(String.valueOf(egal(valprecedent,val)));
+                aff=String.valueOf(egal(valprecedent,val));
+                mViewText.setText(aff);
                 valprecedent=egal(valprecedent,val);
                 operateur="+";
                 val=0;
@@ -87,7 +103,8 @@ public class MainActivity extends AppCompatActivity {
         bMoins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mViewText.setText(String.valueOf(egal(valprecedent,val)));
+                aff=String.valueOf(egal(valprecedent,val));
+                mViewText.setText(aff);
                 valprecedent=egal(valprecedent,val);
                 operateur="-";
                 val=0;
@@ -98,7 +115,8 @@ public class MainActivity extends AppCompatActivity {
         bMult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mViewText.setText(String.valueOf(egal(valprecedent,val)));
+                aff=String.valueOf(egal(valprecedent,val));
+                mViewText.setText(aff);
                 valprecedent=egal(valprecedent,val);
                 operateur="x";
                 val=0;
@@ -110,7 +128,8 @@ public class MainActivity extends AppCompatActivity {
         bDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mViewText.setText(String.valueOf(egal(valprecedent,val)));
+                aff=String.valueOf(egal(valprecedent,val));
+                mViewText.setText(aff);
                 valprecedent=egal(valprecedent,val);
                 operateur="/";
                 val=0;
@@ -122,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
         mGenerateEgalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mViewText.setText(String.valueOf(egal(valprecedent,val)));
+                aff=String.valueOf(egal(valprecedent,val));
+                mViewText.setText(aff);
                 operateur="";
                 val=0;
                 valS="";
@@ -141,8 +161,10 @@ public class MainActivity extends AppCompatActivity {
         bClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                aff="";
                 valS="";
                 val=0;
+                valprecedent=0;
                 mViewText.setText(valS);
             }
         });

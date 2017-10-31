@@ -33,13 +33,13 @@ public class AffichScientifiq extends AppCompatActivity {
     private Button bLn;
     private Button bPi;
     private Button bPuissance;
-    private double val;
-    private String aff="";
-    private String valS = "";
-    private double valprecedent;
+    public double val=MainActivity.val;
+    private String aff=MainActivity.aff;
+    public String valS = MainActivity.valS;
+    public double valprecedent=MainActivity.valprecedent;
     private double valAvantPuissance=0;
     private ArrayList<Button> ListeBoutons;
-    private String operateur = "";
+    public String operateur = MainActivity.operateur;
     private String fonction="";
 
 
@@ -76,6 +76,9 @@ public class AffichScientifiq extends AppCompatActivity {
         bLn=(Button) findViewById(R.id.bLn);
         bPi=(Button) findViewById(R.id.bPi);
         bPuissance=(Button) findViewById(R.id.bPuissance);
+
+        mViewText.setText(aff);
+        aff="";
 
         for (int i = 0; i < 10; i++) {
             final int valb = i;
