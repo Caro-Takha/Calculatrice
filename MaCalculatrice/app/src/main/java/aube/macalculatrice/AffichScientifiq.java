@@ -25,15 +25,20 @@ public class AffichScientifiq extends AppCompatActivity {
     private Button bVirgule;
     private Button bClear;
     private Button bPercent;
-    private Button bPO;
-    private Button bPF;
     private Button bCos;
+    private Button bSin;
+    private Button bArcsin;
+    private Button bArccos;
+    private Button bExp;
+    private Button bLn;
+    private Button bPi;
     private double val;
     private String aff;
     private String valS = "";
     private double valprecedent;
     private ArrayList<Button> ListeBoutons;
     private String operateur = "";
+    private String fonction="";
 
 
     @Override
@@ -61,9 +66,13 @@ public class AffichScientifiq extends AppCompatActivity {
         bVirgule = (Button) findViewById(R.id.bVirgule);
         bClear = (Button) findViewById(R.id.bClear);
         bPercent = (Button) findViewById(R.id.bPercent);
-        bPO=(Button) findViewById(R.id.bPO);
-        bPF=(Button) findViewById(R.id.bPF);
+        bArccos=(Button) findViewById(R.id.bArccos);
+        bArcsin=(Button) findViewById(R.id.bArcsin);
         bCos=(Button) findViewById(R.id.bCos);
+        bSin=(Button) findViewById(R.id.bSin);
+        bExp=(Button) findViewById(R.id.bExp);
+        bLn=(Button) findViewById(R.id.bLn);
+        bPi=(Button) findViewById(R.id.bPi);
 
         for (int i = 0; i < 10; i++) {
             final int valb = i;
@@ -91,6 +100,7 @@ public class AffichScientifiq extends AppCompatActivity {
                 val = 0;
                 valS = "";
                 aff="";
+                fonction="";
             }
         });
 
@@ -104,6 +114,7 @@ public class AffichScientifiq extends AppCompatActivity {
                 val = 0;
                 valS = "";
                 aff="";
+                fonction="";
             }
         });
 
@@ -116,6 +127,7 @@ public class AffichScientifiq extends AppCompatActivity {
                 val = 0;
                 valS = "";
                 aff="";
+                fonction="";
             }
         });
 
@@ -129,6 +141,7 @@ public class AffichScientifiq extends AppCompatActivity {
                 val = 0;
                 valS = "";
                 aff="";
+                fonction="";
             }
         });
 
@@ -141,6 +154,7 @@ public class AffichScientifiq extends AppCompatActivity {
                 aff="";
                 val = 0;
                 valS = "";
+                fonction="";
             }
         });
 
@@ -161,6 +175,9 @@ public class AffichScientifiq extends AppCompatActivity {
                 valS = "";
                 val = 0;
                 mViewText.setText(valS);
+                fonction="";
+                operateur="";
+                valprecedent=0;
             }
         });
 
@@ -184,23 +201,62 @@ public class AffichScientifiq extends AppCompatActivity {
         bCos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                operateur="cos";
-                aff = "cos(";
+                fonction="cos";
+                aff = "cos ";
                 mViewText.setText(aff);
             }
         });
 
-
-        bPF.setOnClickListener(new View.OnClickListener() {
+        bSin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                aff=aff+")";
-                try{
-                    //val=Double.parseDouble(String.valueOf(Math.cos(2)));
-                    Log.v("val APP TAG", String.valueOf(val));
-                }catch (Exception e){
+                fonction="sin";
+                aff = "sin ";
+                mViewText.setText(aff);
+            }
+        });
 
-                }
+        bArccos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fonction="arccos";
+                aff = "arccos ";
+                mViewText.setText(aff);
+            }
+        });
+
+        bArcsin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fonction="arcsin";
+                aff = "arcsin ";
+                mViewText.setText(aff);
+            }
+        });
+
+        bExp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fonction="exp";
+                aff = "exp ";
+                mViewText.setText(aff);
+            }
+        });
+
+        bLn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fonction="ln";
+                aff = "ln ";
+                mViewText.setText(aff);
+            }
+        });
+
+        bPi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                val=Math.PI;
+                aff = String.valueOf(val);
                 mViewText.setText(aff);
             }
         });
@@ -208,6 +264,24 @@ public class AffichScientifiq extends AppCompatActivity {
 
     public double egal(double v1, double v2) {
         double resultat = 0;
+        if (fonction.equals("cos")){
+            v2=Math.cos(v2);
+        }
+        if (fonction.equals("sin")){
+            v2=Math.sin(v2);
+        }
+        if (fonction.equals("arccos")){
+            v2=Math.acos(v2);
+        }
+        if (fonction.equals("arcsin")){
+            v2=Math.asin(v2);
+        }
+        if (fonction.equals("exp")){
+            v2=Math.exp(v2);
+        }
+        if (fonction.equals("ln")){
+            v2=Math.log(v2);
+        }
         if (operateur.equals("+")) {
             resultat = v1 + v2;
         }
@@ -221,11 +295,9 @@ public class AffichScientifiq extends AppCompatActivity {
             resultat = v1 / v2;
         }
         if (operateur.equals("")) {
-            resultat = val;
+            resultat = v2;
         }
-        if (operateur.equals("cos")){
-            resultat=Math.cos(val);
-        }
+
 
         return resultat;
     }
