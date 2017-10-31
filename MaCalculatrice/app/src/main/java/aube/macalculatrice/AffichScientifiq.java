@@ -32,10 +32,12 @@ public class AffichScientifiq extends AppCompatActivity {
     private Button bExp;
     private Button bLn;
     private Button bPi;
+    private Button bPuissance;
     private double val;
-    private String aff;
+    private String aff="";
     private String valS = "";
     private double valprecedent;
+    private double valAvantPuissance=0;
     private ArrayList<Button> ListeBoutons;
     private String operateur = "";
     private String fonction="";
@@ -73,6 +75,7 @@ public class AffichScientifiq extends AppCompatActivity {
         bExp=(Button) findViewById(R.id.bExp);
         bLn=(Button) findViewById(R.id.bLn);
         bPi=(Button) findViewById(R.id.bPi);
+        bPuissance=(Button) findViewById(R.id.bPuissance);
 
         for (int i = 0; i < 10; i++) {
             final int valb = i;
@@ -260,6 +263,18 @@ public class AffichScientifiq extends AppCompatActivity {
                 mViewText.setText(aff);
             }
         });
+
+        bPuissance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fonction="^";
+                valAvantPuissance=val;
+                val=0;
+                valS="";
+                aff = aff+"^";
+                mViewText.setText(aff);
+            }
+        });
     }
 
     public double egal(double v1, double v2) {
@@ -281,6 +296,9 @@ public class AffichScientifiq extends AppCompatActivity {
         }
         if (fonction.equals("ln")){
             v2=Math.log(v2);
+        }
+        if (fonction.equals("^")){
+            v2=Math.pow(valAvantPuissance,v2);
         }
         if (operateur.equals("+")) {
             resultat = v1 + v2;
